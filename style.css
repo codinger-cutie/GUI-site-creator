@@ -1,0 +1,50 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .top-bar {
+    display: flex;
+    gap: 3px;
+    background-color: gray;
+    min-height: 20px;
+    user-select: none;
+  }
+  
+  .top-bar button {
+    background-color: #b6b4b4;
+    color: green;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .top-bar button:hover {
+    background-color: green;
+    color: white;
+  }
+  
+  .bgcolor-box {
+    background-color: lightgray;
+    color: green;
+    transition: 0.3s;
+  }
+  
+  .bgcolor-box:hover {
+    color: white;
+    background-color: green;
+  }
+  
+  .add-box {
+    background-color: #b6b4b4;
+    color: green;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  .add-box:hover {
+    background-color: green;
+    color: #b6b4b4;
+  }
+  
