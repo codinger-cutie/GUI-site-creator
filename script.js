@@ -36,16 +36,16 @@ function h1test() {
 h1AddBtn.addEventListener('click', h1test);
 
 /* test code below */
-const selectElement = Document.getElementById("add-element-select");
+const selectElement = document.getElementById("add-element-select");
 
 const test = document.getElementById("test");
 
-const addBox = document.getElementsByClassName("add-box");
+const testAdd = document.querySelector("#test-add");
 
-addBox.addEventListener("click", displayValue);
+testAdd.addEventListener("click", displayValue);
 
 function displayValue() {
-   let val = documentGetElementById("add-element-select").value();
+   let val = document.getElementById("add-element-select").value;
    test.innerHTML = val;
 }
  /* test code above */
