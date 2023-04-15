@@ -42,9 +42,25 @@ html {
     border: none;
     transition: 0.3s;
   }
-  
+
   .add-box:hover {
     background-color: green;
     color: #b6b4b4;
   }
+
+  #ele-text {
+    border-style: solid;
+    border-color: red;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 0px 0rem rgba(255, 0, 0, 0.45);
+    transition: 0.2s;
+  }
   
+  #ele-text:focus {
+    border-style: solid;
+    border-color: red;
+    box-shadow: 0px 0px 5px 3px red;
+    box-shadow: 0px 0px 0px 3px red;
+    box-shadow: 0px 0px 0px 0.25rem rgba(255, 0, 0, 0.45);
+    outline-style: none;
+  }
