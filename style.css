@@ -74,6 +74,36 @@ html {
     align-items: center;
     padding-bottom: 20px;
   }
+
+  .bootstrap-success-btn {
+    padding: 6px 14px 6px 14px;
+    border-radius: .25rem;
+    border: none;
+    outline-style: none;
+    box-shadow: 0px 0px 0px 0px rgba;
+    color: #fff;
+    background-color: #28a745;
+    transition: ease-in-out .15s;
+  }
+  .bootstrap-success-btn:focus {
+    box-shadow: 0 0 0 .2rem rgba(40,167,69,.5)
+  }
+  .bootstrap-success-btn:hover {background-color: #218838;}
+  
+  .bootstrap-danger-btn {
+    padding: 6px 14px 6px 14px;
+    border-radius: .25rem;
+    border: none;
+    outline-style: none;
+    box-shadow: 0px 0px 0px 0.25rem rgba;
+    color: #fff;
+    background-color: #dc3545;
+    transition: ease-in-out .15s;
+  }
+  .bootstrap-danger-btn:focus {
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .5);
+  }
+  .bootstrap-danger-btn:hover {background-color: #c82333;}
   
   #del-ele {
     padding: 6px 14px 6px 14px;
@@ -284,3 +314,39 @@ html {
   #done:hover {background-color: #218838;}
   
   #btn-row-c {user-select: none;}
+
+
+
+
+
+  #GPE-scroll-container {
+    max-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 300px;
+  }
+
+  #GPE-scroll-container::-webkit-scrollbar {
+    background-color: lightgray;
+    width: 14px;
+  }
+  
+  #GPE-scroll-container::-webkit-scrollbar-thumb {
+    background-color: green;
+    border: 2px solid lightgray;
+  }
+  
+  #GPE-scroll-container::-webkit-scrollbar-button {
+    background-color: lightblue;
+  }
+  
+  #GPE-scroll-container::-webkit-scrollbar-button:active {
+    background-color: darkgray;
+  }
+  
+  /*
+  #top-bar:not(#page-content #top-bar) {
+    background-color: green;
+  }
+  */
+  

@@ -118,6 +118,22 @@ classPopupClose.addEventListener("click", () => {
   classPopup.style.display = 'none';
 });
 
+document.addEventListener("keydown", e => {
+  if (e.keyCode == 27) {
+    classPopup.style.opacity = '1';
+    setTimeout(fadeOut, 1000);
+    function fadeOut() {
+      classPopup.style.opacity = '0';
+    }
+    setTimeout(hide, 2000);
+    function hide() {
+      classPopup.style.display = 'none';
+      classPopup.style.opacity = '1';
+    }
+    
+  }
+  
+});
   
 }
 
@@ -137,6 +153,8 @@ function h1test() {
 }, {once:true} );
     
     if (!text=="") { testh1.innerHTML = text;} else {testh1.innerHTML = 'Test h1';}
+    testh1.classList.add("GPE-content-editable");
+    testh1.setAttribute("contentEditable", "true");
 
     box.appendChild(testh1);
   } else if (val=="add-h2") {
@@ -154,7 +172,9 @@ function h1test() {
 }, {once:true} );
     
     if (!text=="") { testh2.innerHTML = text;} else {testh2.innerHTML = 'Test h2';}
-    
+    testh2.classList.add("GPE-content-editable");
+    testh2.setAttribute("contentEditable", "true");
+
     box.appendChild(testh2);
   } else if (val=="add-h3") {
     let testh3 = document.createElement("h3");
@@ -171,6 +191,8 @@ function h1test() {
 }, {once:true} );
      
      if (!text=="") { testh3.innerHTML = text;} else {testh3.innerHTML = 'Test h3';}
+     testh3.classList.add("GPE-content-editable");
+    testh3.setAttribute("contentEditable", "true");
      
     box.appendChild(testh3);
   } else if (val=="add-h4") {
@@ -188,6 +210,8 @@ function h1test() {
 }, {once:true} );
     
     if (!text=="") { testh4.innerHTML = text;} else {testh4.innerHTML = 'Test h4';}
+    testh4.classList.add("GPE-content-editable");
+    testh4.setAttribute("contentEditable", "true");
     
     box.appendChild(testh4);
   } else if (val=="add-h5") {
@@ -206,7 +230,9 @@ function h1test() {
     
     
     if (!text=="") { testh5.innerHTML = text;} else {testh5.innerHTML = 'Test h5';}
-    
+    testh5.classList.add("GPE-content-editable");
+    testh5.setAttribute("contentEditable", "true");
+
     box.appendChild(testh5);
   } else if (val=="add-h6") {
     let testh6 = document.createElement("h6");
@@ -224,6 +250,8 @@ classDone.addEventListener("click", () => {
 }, {once:true} );
     
     if (!text=="") { testh6.innerHTML = text;} else {testh6.innerHTML = 'Test h6';}
+    testh6.classList.add("GPE-content-editable");
+    testh6.setAttribute("contentEditable", "true");
     
     box.appendChild(testh6);
   } else if (val=="add-p") {
@@ -259,6 +287,8 @@ classDone.addEventListener("click", () => {
     
     
     if (!text=="") { testi.innerHTML = text;} else {testi.innerHTML = 'Test i';}
+    testp.classList.add("GPE-content-editable");
+    testp.setAttribute("contentEditable", "true");
     
     box.appendChild(testi);
   } else if (val=="add-strong") {
@@ -276,6 +306,8 @@ classDone.addEventListener("click", () => {
 }, {once:true} );
                                                
     if (!text=="") { teststrong.innerHTML = text;} else {teststrong.innerHTML = 'Test strong';}
+    teststrong.classList.add("GPE-content-editable");
+    teststrong.setAttribute("contentEditable", "true");
     
     box.appendChild(teststrong);
   } else if (val=="add-b") {
@@ -293,6 +325,8 @@ classDone.addEventListener("click", () => {
 }, {once:true} );
     
     if (!text=="") { testb.innerHTML = text;} else {testb.innerHTML = 'Test b';}
+    testb.classList.add("GPE-content-editable");
+    testb.setAttribute("contentEditable", "true");
     
     box.appendChild(testb);
   } else if (val=="add-br") {
@@ -310,6 +344,8 @@ classDone.addEventListener("click", () => {
 }, {once:true} );
     
     if (!text=="") { testbr.innerHTML = text;} else {testbr.innerHTML = 'Test br';}
+    testbr.classList.add("GPE-content-editable");
+    testbr.setAttribute("contentEditable", "true");
     
     box.appendChild(testbr);
   } else if (val=="add-a") {
@@ -376,7 +412,9 @@ classDone.addEventListener("click", () => {
 }, {once:true} );
     
     if (!text=="") { testbtn.innerHTML = text;} else {testbtn.innerHTML = 'Test button';}
-    
+    testbtn.classList.add("GPE-content-editable");
+    testbtn.setAttribute("contentEditable", "true");
+
     box.appendChild(testbtn);
   }
   box.appendChild(testh1);
@@ -416,6 +454,15 @@ popupClose.addEventListener("click", hideAlert);
 function hideAlert() {
   alert.style.display = "none";
 }
+
+document.addEventListener("keydown", e => {
+  console.log(e.keyCode);
+  if (e.keyCode == 27) {
+    hideAlert();
+    console.log("Esc pressed");
+  }
+  
+});
 
 
 const classPopup = document.getElementById("class-popup");
@@ -458,3 +505,85 @@ classPopupClose.addEventListener("click", () => {
 });
 
 
+box.addEventListener("click", () => {
+  
+  let pa = box.querySelectorAll('p');
+pa.forEach(pa => {
+  pa.addEventListener("dblclick", e => {
+    pa.remove();
+  });
+  
+});
+  
+});
+
+box.addEventListener("click", e => {
+
+  
+let pa = box.querySelectorAll('p');
+
+pa.forEach(pa => {
+
+  pa.addEventListener("click", e => {
+    let popupId = box.querySelectorAll('.GPE-for-popup');
+    popupId.forEach(popupId => {
+      popupId.classList.remove("GPE-for-popup");
+    });
+    pa.classList.add("GPE-for-popup");
+    if (document.querySelector('#popup')) {
+      let popup = document.querySelector('#popup');
+      popup.remove();
+    }
+    let popup = document.createElement("div");
+    popup.style.width = '100px';
+    popup.style.height = '50px';
+    popup.style.position = 'absolute';
+    popup.style.left = '0px';
+    popup.style.top = '0px';
+    popup.style.backgroundColor = 'blue';
+    popup.id = 'popup';
+    box.appendChild(popup);
+    pa.style.backgroundColor = 'blue';
+  })
+  
+});
+
+
+});
+
+
+box.addEventListener("click", e => {
+  let popup = document.querySelector('#popup');
+  if (popup) {
+    popup.style.backgroundColor = 'red';
+  }
+  
+});
+
+
+
+box.addEventListener("click", e => {
+  if (document.querySelector('#popup')) {
+    let popup = document.querySelector('#popup');
+    popup.innerHTML = '<span style="color: white;" id="tag"></span>  <button id="close-popup">X</button>';
+    popup.addEventListener("dblclick", e => {
+      let popupId = document.querySelector('.GPE-for-popup');
+      popupId.style.backgroundColor = 'green';
+    });
+
+    let tagP = document.querySelector('#tag');
+    if (document.querySelector('.GPE-for-popup')) {
+     let popupId = document.querySelector('.GPE-for-popup');
+      tagP.innerHTML = 'Tag name: ' + popupId.tagName;
+      
+    }
+
+    let closePopup = document.querySelector('#close-popup');
+  closePopup.addEventListener("click", e => {   
+  document.querySelector('#popup').style.display = 'none';
+document.querySelector('.GPE-for-popup').classList.remove("GPE-for-popup");
+
+  });
+    
+  };
+})
